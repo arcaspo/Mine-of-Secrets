@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4c3ygdnpxgta"]
+
+[ext_resource type="PackedScene" uid="uid://cwck8dpokgvku" path="res://scenes/terrain.tscn" id="1_vaw75"]
+[ext_resource type="PackedScene" uid="uid://0pxde3nqgyaj" path="res://scenes/player.tscn" id="2_7fest"]
+
+[node name="world" type="Node2D"]
+
+[node name="terrain" parent="." instance=ExtResource("1_vaw75")]
+unique_name_in_owner = true
+
+[node name="Player" parent="." instance=ExtResource("2_7fest")]
+position = Vector2(10, -15)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
