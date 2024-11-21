@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	# Mouse in viewport coordinates.
 	if Input.is_action_just_pressed("click"):
 		var rot = position.angle_to_point(get_global_mouse_position())
-		terrain.mine(position - Vector2(0, abs((rad_to_deg(rot)-90) / 4) + 8), 60, 100, -rot+1.571)
+		terrain.mine(position, 60, 100, -rot+1.571)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
