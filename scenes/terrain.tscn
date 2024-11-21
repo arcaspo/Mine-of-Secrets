@@ -1,14 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwck8dpokgvku"]
+[gd_scene load_steps=3 format=3 uid="uid://cwck8dpokgvku"]
 
 [ext_resource type="Script" path="res://scripts/terrain.gd" id="1_3o4y4"]
+[ext_resource type="Script" path="res://asset-library-DestructiblePolygon2D-4-807e49eec27247c0c0e6ba2a0d285a97d71b94fc/DestructiblePolygon2D.gd" id="2_765st"]
 
 [node name="terrain" type="Node2D"]
 script = ExtResource("1_3o4y4")
 
-[node name="ground" type="Polygon2D" parent="."]
+[node name="DestructiblePolygon2D" type="Node2D" parent="."]
+script = ExtResource("2_765st")
+collidable = true
+
+[node name="ground" type="Polygon2D" parent="DestructiblePolygon2D"]
 color = Color(0.482235, 0.303858, 0.0188154, 1)
-polygon = PackedVector2Array(0, 0, 500, 0, 500, 1000, 0, 1000)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 1000, 0, 1000)
