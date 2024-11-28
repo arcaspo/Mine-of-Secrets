@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("click"):
 		animated_sprite.play("mine")
 		var rot = position.angle_to_point(get_global_mouse_position())
-		terrain.mine(position, 60, 100, -rot+1.571)
+		terrain.mine(position, 60, 500, -rot+1.571)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -34,7 +34,6 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if direction == 0:
 			if !animated_sprite.is_playing():
-				print("idle")
 				animated_sprite.play("idle")
 		else:
 			if !animated_sprite.is_playing():

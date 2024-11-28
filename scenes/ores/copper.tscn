@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqtuehps3iu4n"]
+
+[ext_resource type="PackedScene" uid="uid://dtbbr4ii7ycth" path="res://scenes/collectible.tscn" id="1_ewm74"]
+
+[node name="Copper" instance=ExtResource("1_ewm74")]

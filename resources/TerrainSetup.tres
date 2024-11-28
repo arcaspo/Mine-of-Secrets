@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="TerrainSetup" load_steps=21 format=3 uid="uid://dqejnvahmn0hu"]
+
+[ext_resource type="Script" path="res://scripts/TerrainLayer.gd" id="1_o37yq"]
+[ext_resource type="Script" path="res://scripts/TerrainSetup.gd" id="1_xkd4b"]
+[ext_resource type="Texture2D" uid="uid://620ejnr46f7" path="res://assets/dirt.png" id="2_8jxu7"]
+[ext_resource type="Script" path="res://scripts/OreRarity.gd" id="2_wpsmx"]
+[ext_resource type="Texture2D" uid="uid://c6mg7xe7j1ikh" path="res://assets/mountainstone_color.png" id="3_0mx0w"]
+[ext_resource type="PackedScene" uid="uid://bqtuehps3iu4n" path="res://scenes/ores/copper.tscn" id="3_pofgi"]
+[ext_resource type="PackedScene" uid="uid://c608sl1fpf3t2" path="res://scenes/ores/silver.tscn" id="4_13fh8"]
+[ext_resource type="Texture2D" uid="uid://cuki8ob0h0er8" path="res://assets/mountain.png" id="4_lhlxw"]
+[ext_resource type="PackedScene" uid="uid://rdj2kxjb82u0" path="res://scenes/ores/gold.tscn" id="6_5rsjf"]
+[ext_resource type="PackedScene" uid="uid://b0sespc40yw80" path="res://scenes/ores/ruby.tscn" id="8_52oy3"]
+[ext_resource type="PackedScene" uid="uid://dcxee4skj6s7l" path="res://scenes/ores/diamond.tscn" id="9_hhmcq"]
+
+[sub_resource type="Resource" id="Resource_il87j"]
+script = ExtResource("2_wpsmx")
+Ore = ExtResource("3_pofgi")
+Rarity = 50
+
+[sub_resource type="Resource" id="Resource_15i6r"]
+script = ExtResource("2_wpsmx")
+Ore = ExtResource("4_13fh8")
+Rarity = 25
+
+[sub_resource type="Resource" id="Resource_wvpah"]
+script = ExtResource("1_o37yq")
+name = "Dirt"
+start = 0
+depth = 1000
+texture = ExtResource("2_8jxu7")
+density = 5.0
+ores = Array[ExtResource("2_wpsmx")]([SubResource("Resource_il87j"), SubResource("Resource_15i6r")])
+
+[sub_resource type="Resource" id="Resource_uhcph"]
+script = ExtResource("2_wpsmx")
+Ore = ExtResource("6_5rsjf")
+Rarity = 20
+
+[sub_resource type="Resource" id="Resource_761m0"]
+script = ExtResource("2_wpsmx")
+Ore = ExtResource("4_13fh8")
+Rarity = 50
+
+[sub_resource type="Resource" id="Resource_4m2pg"]
+script = ExtResource("1_o37yq")
+name = "Rock"
+start = 1000
+depth = 2000
+texture = ExtResource("3_0mx0w")
+density = 15.0
+ores = Array[ExtResource("2_wpsmx")]([SubResource("Resource_uhcph"), SubResource("Resource_761m0")])
+
+[sub_resource type="Resource" id="Resource_vm0tm"]
+script = ExtResource("2_wpsmx")
+Ore = ExtResource("8_52oy3")
+Rarity = 40
+
+[sub_resource type="Resource" id="Resource_5sgvn"]
+script = ExtResource("2_wpsmx")
+Ore = ExtResource("9_hhmcq")
+Rarity = 15
+
+[sub_resource type="Resource" id="Resource_skpw0"]
+script = ExtResource("1_o37yq")
+name = "Hard Rock"
+start = 2000
+depth = 3000
+texture = ExtResource("4_lhlxw")
+density = 30.0
+ores = Array[ExtResource("2_wpsmx")]([SubResource("Resource_vm0tm"), SubResource("Resource_5sgvn")])
+
+[resource]
+script = ExtResource("1_xkd4b")
+Width = 2000
+TerrainLayers = Array[ExtResource("1_o37yq")]([SubResource("Resource_wvpah"), SubResource("Resource_4m2pg"), SubResource("Resource_skpw0")])

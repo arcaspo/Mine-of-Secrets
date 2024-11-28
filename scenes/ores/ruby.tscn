@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0sespc40yw80"]
+
+[ext_resource type="PackedScene" uid="uid://dtbbr4ii7ycth" path="res://scenes/collectible.tscn" id="1_6tltu"]
+
+[node name="Ruby" instance=ExtResource("1_6tltu")]
+ore = "Ruby"

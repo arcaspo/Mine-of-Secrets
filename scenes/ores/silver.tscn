@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c608sl1fpf3t2"]
+
+[ext_resource type="PackedScene" uid="uid://dtbbr4ii7ycth" path="res://scenes/collectible.tscn" id="1_vn140"]
+
+[node name="Silver" instance=ExtResource("1_vn140")]
+ore = "Silver"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TerrainLayer" load_steps=3 format=3 uid="uid://c03jk852xwy2c"]
+
+[ext_resource type="Script" path="res://scripts/OreRarity.gd" id="1_4taxd"]
+[ext_resource type="Script" path="res://scripts/TerrainLayer.gd" id="2_v5as8"]
+
+[resource]
+script = ExtResource("2_v5as8")
+name = ""
+start = 0
+depth = 0
+density = 0.0
+ores = Array[ExtResource("1_4taxd")]([])
